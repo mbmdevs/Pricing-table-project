@@ -1,0 +1,162 @@
+/*****Global Stylings*******/
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    --big: 3rem;
+    --medium: 1.7rem;
+    --small: 1.4rem;
+    --primary:#004df3;/* Crayon Blue:*/
+    --secondary:#d5e3fe; /*Havkes Blue:*/
+    --text-color:#646464; /*Storm dust*/
+    --border-color:#e5e5e5; /*Mecury*/
+    --heavy:700; /*For the font weight*/
+    --light:400; /*font weight*/
+}
+body {
+    font-size:var(--small);
+    color:var(--text-color);
+    font-family: sans-serif;
+}
+body > h1, body > p, body > .billing-plan{
+    text-align: center;
+}
+h2 {
+    font-size:var(--big);
+    font-weight: var(--light);
+}
+/**********/
+
+#title {
+    color:black;
+    font-weight: var(--heavy);
+    margin: 5rem 0rem 0.5rem 0rem;
+}
+body > p, .billing-plan {
+    margin-bottom:2rem;
+}
+/*****Adding the radio button***/
+/****The :checked psuedo class allows me to style the label if the radio is checked/clicked ****/
+input:checked + label {
+    color: var(--primary)
+}
+
+/******Styling the cards container*****/
+.pricing-cards {
+    width:70%;
+    margin:3rem auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap:3rem;
+}
+
+
+/*****The individual cards**********/
+.cards {
+    min-height: 60vh;
+    border: 0.2rem solid var(--border-color);
+    padding:2rem 2rem 4rem 2rem;
+    flex:1 1 31rem;
+}
+.card2 {
+    border: 0.3rem solid var(--primary);
+}
+
+h2 + p {
+    font-size: var(--medium);
+    margin-bottom: 2rem;
+}
+
+.offers {
+    width:50%;
+    margin:0 auto;
+}
+.offers p {
+    width:120%; /*So the whole paragraph fits in one line*/
+}
+
+.price-block {
+    display: grid;
+    grid-template-columns: 70px 80px; /*I tried fr but it was giving number 8 in block one too much space since it was only 1 digit*/
+    width:50%;
+    margin:2rem auto 2rem auto;
+}
+.price-block :nth-of-type(1) {
+    grid-column: 1 / 2;
+    grid-row:1 / 5;
+    font-size:4rem;
+    font-weight: 700;
+    color:black;
+}
+.price-block :nth-of-type(2) {
+    grid-column: 2 / 3;
+    grid-row:2 / 3;
+    font-size: 1.2rem; 
+    width:150%;
+}
+
+.price-block :nth-of-type(3) {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    font-size: 1.2rem;
+    width:150%;
+}
+/*I wanted to space them out but without using gap as it block1 had too much space*/
+.block2 p ~ p, .block3 p ~ p {
+    margin-left:30px;
+}
+.block2 :nth-of-type(1) {
+    color: var(--primary);
+}
+/*I tried resizing the $ but it wasnt working*/
+sup {
+    font-size: 1rem;
+}
+/**** the general sibling selector to target the p tags*/
+.price-block ~ p {
+    margin-bottom: 1rem;
+    position: relative;
+    left:30px;
+}
+button {
+    font-weight: var(--heavy);
+    width:80%;
+    padding:1rem 5rem;
+    margin-top:3rem;
+    margin-left:3rem;
+    font-size: var(--medium);
+    background:transparent;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+}
+.card2 button {
+    background: var(--primary);
+    color:white;
+
+}
+button:hover {
+    background: var(--secondary);
+    color: var(--primary);
+}
+/*****I could have used font Awesome but decided to practice my html skills by using html Entities*/
+.cross {
+    font-size: 2rem;
+    color:#ff2725;
+}
+.tick {
+    color:#00b341;
+    font-size: 2rem;
+}
+
+
+input:checked + label {
+    color: var(--primary)
+}
+
+
+
